@@ -44,7 +44,6 @@ public class bookServiceImpl implements BookService {
         }
         return false;
     }
-
     @Override
     public Book getBookById(Long id) {
         Optional<BookEntity> byId=repository.findById(id);
