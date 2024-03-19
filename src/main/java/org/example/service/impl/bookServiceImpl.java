@@ -6,8 +6,6 @@ import org.example.entity.BookEntity;
 import org.example.repository.BookRepository;
 import org.example.service.BookService;
 import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -19,11 +17,7 @@ public class bookServiceImpl implements BookService {
 
     final BookRepository repository;
 
-    ModelMapper mapper;
-    @Bean
-    public void setUp(){
-        this.mapper=new ModelMapper();
-    }
+    final ModelMapper mapper;
 
     @Override
     public void addBook(Book book) {

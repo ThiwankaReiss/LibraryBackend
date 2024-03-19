@@ -2,9 +2,7 @@ package org.example.service.impl;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
-import org.example.dto.Book;
 import org.example.dto.Borrower;
-import org.example.entity.BookEntity;
 import org.example.entity.BorrowerEntity;
 import org.example.repository.BorrowerRepository;
 import org.example.service.BorrowerService;

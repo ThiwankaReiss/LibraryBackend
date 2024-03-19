@@ -1,8 +1,6 @@
 package org.example.service;
 
-import org.example.dto.Book;
 import org.example.dto.Borrower;
-import org.example.entity.BookEntity;
 import org.example.entity.BorrowerEntity;
 
 import java.util.List;

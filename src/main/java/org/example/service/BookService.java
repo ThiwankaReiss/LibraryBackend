@@ -2,7 +2,6 @@ package org.example.service;
 
 import org.example.dto.Book;
 import org.example.entity.BookEntity;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 

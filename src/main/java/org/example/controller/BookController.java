@@ -6,10 +6,7 @@ import org.example.dto.Response;
 import org.example.entity.BookEntity;
 import org.example.service.BookService;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.Collections;
 
 @RestController
 @RequestMapping("/book")
@@ -32,6 +29,7 @@ public class BookController {
          return service.deleteBook(id) ?
       new Response(String.format("Deleted Book Id(%s)",id)):
                  new Response(String.format("Unable to Delete Book Id(%s)",id));
+
     }
     @GetMapping("search/{id}")
     public Book getBookById(@PathVariable Long id){

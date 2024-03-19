@@ -1,13 +1,12 @@
 package org.example.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.example.dto.Book;
 import org.example.dto.Borrower;
+import org.example.dto.Login;
 import org.example.dto.Response;
-import org.example.entity.BookEntity;
 import org.example.entity.BorrowerEntity;
-import org.example.service.BookService;
 import org.example.service.BorrowerService;
+import org.example.service.LoginService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,10 +16,12 @@ import org.springframework.web.bind.annotation.*;
 @CrossOrigin
 public class BorrowerController {
     final BorrowerService service;
+    final LoginService loginService;
     @PostMapping("/add")
     @ResponseStatus(HttpStatus.CREATED)
     public void addBorrower(@RequestBody Borrower borrower){
         service.addBorrower(borrower);
+        loginService.insertLoginData(new Login(borrower.getId(), borrower.getEmail(), borrower.getPassword()));
     }
     @GetMapping("/get")
     public Iterable<BorrowerEntity> getBorrower(){
